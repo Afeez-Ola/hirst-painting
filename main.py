@@ -9,21 +9,22 @@ timmy = Turtle()
 # turtle.setworldcoordinates(-200, -200, 200, 200)
 
 
-start_pos = (-200, 0)
+start_pos = (0, 0)
 timmy.penup()
 timmy.goto(start_pos)
 # timmy.dot(20,"red")
-
+timmy.speed("fastest")
 # Move the turtle in parallel lines
-for h in range(5):
-    for i in range(5):   # repeat 5 times to draw 5 lines
-        for j in range(4):  # repeat 4 times to draw a square
-            timmy.dot(20,"red")   # Move the turtle forward 50 pixels
-            timmy.right(90)      # Turn the turtle left by 90 degrees
-        timmy.dot(20,"red")         # Lift the turtle's pen up
-        timmy.goto(start_pos[0] + 60 * (i+1), start_pos[1]) # Move the turtle to a new starting position
+for h in range(6):
+    start_pos = (0, 50 * h)
+    for i in range(5):
+        for j in range(5):
+            timmy.dot(20,"red")
+            timmy.right(90)
+        timmy.goto(start_pos[0] + 60 * (i), start_pos[1]) # Move the turtle to a new starting position
         timmy.dot(20,"red")
-    start_pos = (-100, 0)
-    timmy.goto(start_pos[0] + 60 * (i+1), start_pos[1])
+
+    print(timmy.pos())
+
 screen = Screen()
 screen.exitonclick()
