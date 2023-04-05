@@ -1,4 +1,5 @@
 import colorgram
+from turtle import Turtle, Screen
 
 # colors = colorgram.extract("hirst.jpg", 30)
 # for color in colors:
