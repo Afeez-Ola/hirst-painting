@@ -1,6 +1,6 @@
 import colorgram
 
-colors = colorgram.extract("hirst.jpg", 5)
+colors = colorgram.extract("hirst.jpg", 30)
 
 colors_list = []
 
