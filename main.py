@@ -1,9 +1,8 @@
 import random
-import turtle
 from turtle import Turtle, Screen
 
 timmy = Turtle()
-start_pos = (0, 0)
+start_pos = (-300, -200)
 timmy.penup()
 timmy.goto(start_pos)
 timmy.speed("fastest")
@@ -18,19 +17,16 @@ hex_color = ""
 for i in range(0,len(colors_list)):
     index = random.randint(0, len(colors_list)-1)
     color = colors_list[index]
-    # print(color)
     hex_color = "#{:02x}{:02x}{:02x}".format(int(color[0]), int(color[1]), int(color[2]))
     hex_color_list.append(hex_color)
 
 
-for h in range(6):
-    start_pos = (0, 50 * h)
-    for i in range(5):
-        color_position = random.randint(0, len(hex_color_list))
-        for j in range(5):
-            print(hex_color_list[color_position])
-            timmy.dot(20, hex_color_list[color_position])
-            timmy.right(90)
+for h in range(10):
+    start_pos = (-300, -200+(50 * h))
+    for i in range(10):
+        color_position = random.randint(0, len(hex_color_list)-1)
+        timmy.dot(20, hex_color_list[color_position])
+        timmy.right(90)
         timmy.goto(start_pos[0] + 60 * i, start_pos[1])  # Move the turtle to a new starting position
         timmy.dot(20, hex_color_list[color_position])
 
